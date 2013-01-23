@@ -1,8 +1,0 @@
-package com.significantfiles.mrcounter;
-
-public class Constants {
-
-	public final static String LOG_TAG = "mr.counter";
-	
-	public static final String AUTHORITY = "com.significantfiles.mrcounter";
-}

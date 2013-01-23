@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, IndexActivity!</string>
+    <string name="app_name">Loading Mr.Counter</string>
+    
+    <string name="app_full_name">mr.counter - (c) 2010</string>
+    <string name="version_name">V. 1.0.0</string>
+
+    <string name="headline">Private credit for:</string>
+    <string name="credit_of">of (amount in EUR)</string>
+    <string name="credit">Credit</string>
+    <string name="debit">Debit</string>
+    <string name="cancel">Cancel</string>
+</resources>

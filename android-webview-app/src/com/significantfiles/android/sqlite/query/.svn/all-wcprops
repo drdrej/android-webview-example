@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/34/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/android/sqlite/query
+END
+InsertTxChoice.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/34/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/android/sqlite/query/InsertTxChoice.java
+END
+SQL.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/34/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/android/sqlite/query/SQL.java
+END
+Insert.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/34/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/android/sqlite/query/Insert.java
+END
+Replace.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/34/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/android/sqlite/query/Replace.java
+END
+QueryType.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/34/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/android/sqlite/query/QueryType.java
+END

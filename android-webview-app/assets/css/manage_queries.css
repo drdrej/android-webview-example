@@ -1,0 +1,50 @@
+
+
+#contractOutputDiv {
+	
+}
+
+.credit-value {
+	font-weight: bold;	
+}
+
+#contact {
+  margin-left: 10px;	
+	
+}
+
+
+.app-body {
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 10px;
+	padding-bottom: 20px; 
+	
+/*	padding: 55px 25px 0; 
+	text-align: center
+	*/
+	
+	text-align: left;
+}
+
+#inputCreditValueDiv {
+    background: #CC00af;
+    border-bottom: thin;
+    margin-bottom: 20px;	
+}
+
+
+#inputValueDiv {
+	
+}
+
+#creditValueDisplay {
+	border-bottom: thin;
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: right;
+    margin-right: 25px;
+    margin-left: 25px;
+    width: 100%;
+}
+

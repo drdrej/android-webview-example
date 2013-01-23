@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>MyCredits - manage your money</title>
+
+<link rel="stylesheet" href="../css/manage_queries.css" />
+<link rel="stylesheet" href="../css/jquery_mobile.css" />
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+
+<script type="text/javascript" language="JavaScript"
+	src="../js/jquery_tmpl.js"></script>
+	
+<script type="text/javascript" language="JavaScript"
+	src="../js/jquery_tmplPlus.js"></script>
+
+<script type="text/javascript" language="JavaScript"
+	src="../js/app_objects.js"></script>
+	
+<script type="text/javascript" language="JavaScript">
+    
+    var INT_BUTTON_ID = [ '#b0', '#b1', '#b2', '#b3', '#b4', '#b5', '#b6', '#b7', '#b8', '#b9' ];
+    
+    
+    /**
+     * call-back function: this function will be called after
+     * a contact will be selected from the contact-list.
+     */ 
+    function contactSelected( name, phone ) {
+    	var template = $( "#debtorInfoTmpl" ).template();
+
+         console.debug("name: " + name + " phone: " + phone );
+         
+         var data = { DEBTOR_NAME : name, 
+                      DEBTOR_PHONE : phone 
+         };
+         
+         var newContent = $("#debtorInfoTmpl").tmpl( data );
+         $( "#contractOutputDiv" ).html( newContent );
+         
+         console.debug( "update template-item: contactOutputDiv" );
+
+         // $.mobile.changePage( to, transition, back, changeHash );
+         console.debug( "slide to #createCreditPage" );
+         $.mobile.changePage( "#createCreditPage", "slide", false, true );
+    }
+
+    $(document).bind("mobileinit", function() {
+        console.debug( "execute mobileinit" );
+        
+  		$.mobile.loadingMessage = "Loading ...";
+  		$.mobile.ajaxFormsEnabled = false;
+	});
+	
+	$( function() {
+	   console.debug( "execute document.onReady()" );
+
+       $( "#app-release-date" ).html( WebViewFacade.buildDate() );
+
+ 	   $( '#creditMenu [data-resident-id]' ).live( 'click', function () {
+             $.mobile.pageLoading();
+   		     console.debug( "ID: " + $(this).data('resident-id') );
+    		     
+   		     CreateCreditControl.callContactsManager();
+	   });
+	   
+	   $( '#changeContact' ).click( function() {
+	        $.mobile.pageLoading();
+      	    console.debug( "chose another contact" );
+      		     
+      	    CreateCreditControl.callContactsManager();
+	   });
+		
+		
+	  $( '#callDashboard' ).live( 'tap', function(){ 
+	             console.debug( "exit application" );
+	             CreateCreditControl.exit();
+	  });	
+
+	  $( 'div' ).live( 'beforepageshow', function(event, ui) {
+			// var page = $(this).attr("id");
+			// if (page == 'createCreditPage') {
+			
+			onLoadCreateCreditPage();
+			
+			// }
+	  });		
+		
+ 	  console.debug( "document.ready() executed successfully" );
+ 	  
+ 	  WebViewFacade.sendDocumentReady(); // --> zuvor wird preload-splash gezeigt.
+	});
+	
+	function onLoadreateCreditPage() {
+	  console.debug("on page load");
+	  	    
+	  $( '#creditValueInput' ).live( 'click', function() { 
+	      alert("xxx");
+	      var input = $( '#inputPad' );
+	      input.show();
+	      input.scrolTo();
+	  });
+	  
+	  $.each( INT_BUTTON_ID, function(index, value) { 
+  		  $( value ).live( 'mousedown', function() {
+  		     $( '#creditValueInput' ).val( index );
+  		  }); 
+      });
+      
+	}
+    </script>
+
+<script type="text/javascript" src="../js/jquery_mobile.js"></script>
+
+
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport"
+	content="width=device-width, height=device-height, user-scalable=no" />
+
+
+</head>
+
+<body background="#000000">
+
+<script id="debtorInfoTmpl" type="text/x-jQuery-tmpl">
+    <span>Creditor:</span>
+    <p>
+     <h4>${DEBTOR_NAME}</h4>
+	  ${DEBTOR_PHONE}
+    </p>
+</script>
+
+<div data-role="page" id="startPage" > 
+ 
+ <div id="mrc-header" class="app-body" > 
+		<h1 id="app-logo"><!-- img src="../" alt="jQuery Mobile Framework" width="235" height="61" / --></h1> 
+		<h2>Manage your debts &amp; credits.</h2> 
+		<p id="app-version-info">Release-Date.: <span id="app-release-date" >unknown</span> <a href="">[version]</a></p> 
+ </div> 
+ 
+ <div data-role="content"> 
+		<ul id="creditMenu" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" > 
+			<li data-role="list-divider" >Manage credits ...</li> 
+			<li><a data-resident-id="#createCreditCall" >Create credit</a></li> 
+			<li><a href="#showAllCreditsPage" >Show credits</a></li> 
+		</ul>	
+		
+		<ul id="debtMenu" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" > 
+			<li data-role="list-divider">Manage debts ...</li> 
+			<li><a href="#createDebtPage">Create debt</a></li> 
+			<li><a href="#showAllDebtsPage">Show debts</a></li> 
+		</ul> 
+ </div>
+ 		
+</div>
+
+<div data-role="page" id="createCreditPage" > 
+	<div class="app-body" > 
+		<h1 id="app-logo">Mr.Counter</h1> 
+		<h2>Manage your debts &amp; credits.</h2> 
+		<p id="app-version-info">Release-Date.: <span id="app-release-date" >unknown</span> <a href="">[version]</a></p> 
+	</div> 
+	    
+    <div class="content" >
+	 	<div id="contractOutputDiv" class="app-body" >
+          
+        </div>
+        
+	 	<div id="choseContactDiv" data-role="fieldcontain" >
+		    <a id="changeContact" data-role="button" data-icon="arrow-d">change creditor</a>
+		</div>
+              
+        <div id="inputValueDiv" >
+			    <div id="creditValueDisplay" >XXX</div></a>
+			    
+			    <a href="#changeSettings" ><button type="button" data-theme="c">change currency</button></a>
+		</div>
+		
+		<div id="inputPad" style="display: none" >
+			<fieldset class="ui-grid-c">
+					<div class="ui-block-a"><button id="b1" name="b1" type="button" data-theme="c">1</button></div>
+					<div class="ui-block-b"><button id="b2" name="b2" type="button" data-theme="c">2</button></div>
+					<div class="ui-block-b"><button id="b3" name="b3" type="button" data-theme="c">3</button></div>
+					<div class="ui-block-b"><button id="bDel" name="bDel" type="button" data-theme="b">&lt;</button></div>	   
+			</fieldset>	
+			<fieldset class="ui-grid-c">
+					<div class="ui-block-a"><button id="b4" name="b4" type="button" data-theme="c">4</button></div>
+					<div class="ui-block-b"><button id="b5" name="b5" type="button" data-theme="c">5</button></div>
+					<div class="ui-block-b"><button id="b6" name="b6" type="button" data-theme="c">6</button></div>
+					<div class="ui-block-b"><button id="bDot" name="bDot" type="button" data-theme="a">.</button></div>	   
+			</fieldset>	
+			<fieldset class="ui-grid-c">
+					<div class="ui-block-a"><button id="b7" name="b7" type="button" data-theme="c">7</button></div>
+					<div class="ui-block-b"><button id="b8" name="b8" type="button" data-theme="c">8</button></div>
+					<div class="ui-block-b"><button id="b9" name="b9" type="button" data-theme="c">9</button></div>
+					<div class="ui-block-b"><button id="b0" name="b0" type="button" data-theme="c">0</button></div>	   
+			</fieldset>	
+		</div>
+				
+		<ul id="preferedValuesMenu" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" > 
+			<li data-role="list-divider" >Prefered values ...</li> 
+			<li><a data-value="5" >5.- EUR</a></li> 
+			<li><a data-value="10" >10.- EUR</a></li> 
+			<li><a data-value="20" >20.- EUR</a></li> 
+		</ul>	
+    </div>	
+    
+</div>
+
+<!-- 
+<div data-role="page" id="showAllCreditsPage" > 
+ <div data-role="content"> 
+ </div>
+</div>
+
+<div data-role="page" id="createDebtPage" > 
+ <div data-role="content"> 
+	  This version doesn't support debt-Management. I will release this functionality
+	  in the next release. <br />
+	  <br>
+	  You're wellcome to update!<br />
+	  Andreas Siebert.
+  </div>
+</div>
+
+<div data-role="page" id="showAllDebtsPage" > 
+ <div data-role="content"> 
+ </div>
+</div>
+-->
+
+</body>
+</html>

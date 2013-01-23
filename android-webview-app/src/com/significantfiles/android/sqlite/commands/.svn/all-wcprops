@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/46/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/android/sqlite/commands
+END
+DaoManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/38/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/android/sqlite/commands/DaoManager.java
+END
+CommandBasedContentProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/!svn/ver/34/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/android/sqlite/commands/CommandBasedContentProvider.java
+END
+CreateTable.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/54/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/android/sqlite/commands/CreateTable.java
+END
+InsertRow.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/34/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/android/sqlite/commands/InsertRow.java
+END
+InsertCmd.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/46/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/android/sqlite/commands/InsertCmd.java
+END

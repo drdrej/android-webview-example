@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" /> 
+    <title>MyCredits - manage your money </title>
+	<link rel="stylesheet" href="../css/jquery_mobile.css" />
+
+	<script src="../js/jquery.js"></script>
+	<script src="../js/manage_credits.html.js"></script>
+	<script src="../js/jquery_mobile.js"></script>
+</head>
+
+<body>
+<div data-role="page" >
+		<div class="ui-body ui-body-a"> 
+			<h1>H1 Heading</h1> 
+			<p>This is a paragraph that contains <strong>strong</strong>, <em>emphasized</em> and <a href="index.html">linked</a> text. Here is more text so you can see how HTML markup works in content. Here is more text so you can see how HTML markup works in content.</p> 
+			<div data-role="collapsible" data-collapsed="true" data-theme="a"> 
+				<h3>I'm an themed collapsible</h3> 
+				<p>I have <code>data-theme</code> attribute set manually on my container to set the color to match the content block I'm in. </p> 
+			</div><!-- /collapsible --> 
+		</div><!-- /themed container --> 
+</div>		
+</body>
+</html>

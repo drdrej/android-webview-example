@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>MyCredits - manage your money</title>
+
+<link rel="stylesheet" href="../css/manage_queries.css" />
+<link rel="stylesheet" href="../css/jquery_mobile.css" />
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+
+<script type="text/javascript" language="JavaScript"
+	src="../js/jquery_tmpl.js"></script>
+	
+<script type="text/javascript" language="JavaScript"
+	src="../js/jquery_tmplPlus.js"></script>
+
+<script type="text/javascript" language="JavaScript"
+	src="../js/app_objects.js"></script>
+	
+<script type="text/javascript" language="JavaScript">
+    var template = $( "#debtorInfoTmpl" ).template();
+    
+    /**
+     * call-back function: this function will be called after
+     * a contact will be selected from the contact-list.
+     */ 
+    function contactSelected( name, phone ) {
+         console.debug("name: " + name + " phone: " + phone );
+         
+         var data = { DEBTOR_NAME : name, 
+                      DEBTOR_PHONE : phone 
+         };
+         
+         var newContent = $("#debtorInfoTmpl").tmpl( data );
+         $( "#contractOutputDiv" ).html( newContent );
+         
+         console.debug( "update template-item: contactOutputDiv" );
+
+         // $.mobile.changePage( to, transition, back, changeHash );
+         console.debug( "slide to #createCreditPage" );
+         $.mobile.changePage( "#createCreditPage", "slide", false, true );
+    }
+
+    $(document).bind("mobileinit", function() {
+        console.debug( "execute mobileinit" );
+        
+  		$.mobile.loadingMessage = "Loading ...";
+  		$.mobile.ajaxFormsEnabled = false;
+	});
+	
+	$( function() {
+	   console.debug( "execute document.onReady()" );
+
+ 	   $( '#creditMenu [data-resident-id]' ).live( 'click', function () {
+             $.mobile.pageLoading();
+   		     console.debug( "ID: " + $(this).data('resident-id') );
+    		     
+   		     CreateCreditControl.callContactsManager();
+	   });
+	   
+	   $( '#changeContact' ).click( function() {
+	        $.mobile.pageLoading();
+      	    console.debug( "chose another contact" );
+      		     
+      	    CreateCreditControl.callContactsManager();
+	   });
+		
+		
+	  $( '#callDashboard' ).live( 'tap', function(){ 
+	             console.debug( "exit application" );
+	             CreateCreditControl.exit();
+	  });	
+		
+ 	   console.debug( "document.ready() executed successfully" );
+	});
+	
+    </script>
+
+<script type="text/javascript" src="../js/jquery_mobile.js"></script>
+
+
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport"
+	content="width=device-width, height=device-height, user-scalable=no" />
+
+
+</head>
+
+<body background="#000000">
+
+<script id="debtorInfoTmpl" type="text/x-jQuery-tmpl">
+    <span>Creditor:</span>
+    <p>
+     <h2>${DEBTOR_NAME}</h2>
+	  ${DEBTOR_PHONE}
+    </p>
+</script>
+
+<div data-role="page" id="startPage" > 
+ 
+ <div id="jqm-homeheader"> 
+		<h1 id="jqm-logo"><img src="docs/_assets/images/jquery-logo.png" alt="jQuery Mobile Framework" width="235" height="61" /></h1> 
+		<p>Helps you to manage your debts &amp; credits easy</p> 
+		<p id="jqm-version">Release-Date.: 20.03.2011 <a href="">[description]</a></p> 
+ </div> 
+ 
+ <div data-role="content"> 
+  
+		<div id="inputValueDiv" data-role="fieldcontain" >
+	        <form>
+				<input type="text"" name="creditValueInput" data-role="none"
+				       id="creditValueInput" value="1.0 EUR"  />
+			    
+		    </form>
+			
+			<a href="#changeSettings" >Change currency [btn]</a>
+		</div>
+		
+		<ul id="creditMenu" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" > 
+			<li data-role="list-divider" >Manage credits ...</li> 
+			<li><a data-resident-id="#createCreditCall" >Create credit</a></li> 
+			<li><a href="#showAllCreditsPage" >Show credits</a></li> 
+		</ul>	
+		
+		<ul id="debtMenu" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" > 
+			<li data-role="list-divider">Manage debts ...</li> 
+			<li><a href="#createDebtPage">Create debt</a></li> 
+			<li><a href="#showAllDebtsPage">Show debts</a></li> 
+		</ul> 
+ </div>		
+</div>
+
+<div data-role="page" id="createCreditPage" > 
+    <div class="content" >
+	 	<div id="contractOutputDiv">
+          
+        </div>
+        
+	 	<div id="choseContactDiv" data-role="fieldcontain" >
+		    <a id="changeContact" data-role="button" data-icon="arrow-d">change creditor</a>
+		</div>
+              
+		<div id="inputValueDiv" data-role="fieldcontain" >
+	        <form>
+				<label for="creditValueInput">value:</label>
+				<input type="text"" name="creditValueInput" 
+				       id="creditValueInput" value="1.0 EUR"  />
+			    
+		    </form>
+			
+			<a href="#changeSettings" >Change currency [btn]</a>
+		</div>
+		
+		<ul id="preferedValuesMenu" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" > 
+			<li data-role="list-divider" >Prefered values ...</li> 
+			<li><a data-value="5" >5.- EUR</a></li> 
+			<li><a data-value="10" >10.- EUR</a></li> 
+			<li><a data-value="20" >20.- EUR</a></li> 
+		</ul>	
+		
+    </div>	
+    
+    <div data-role="footer"  class="ui-bar" >
+        <a id="#callDashboard" data-role="button" data-icon="delete">exit</a>
+	    <a id="#callSaveCredit" data-role="button" data-icon="plus" >save new credit</a>
+	
+    <!-- 
+		<div id="saveValueDiv" data-role="fieldcontain" >
+		    <div class="ui-grid-b">
+				<div class="ui-block-a"><button id="#callDashboard" type="button" data-theme="c">exit</button></div>
+				<div class="ui-block-b"><button type="submit" data-theme="a">save</button></div>
+			</div>
+		</div>
+	-->			
+    </div>
+</div>
+
+<div data-role="page" id="showAllCreditsPage" > 
+ <div data-role="content"> 
+ </div>
+</div>
+
+<div data-role="page" id="createDebtPage" > 
+ <div data-role="content"> 
+	  This version doesn't support debt-Management. I will release this functionality
+	  in the next release. <br />
+	  <br>
+	  You're wellcome to update!<br />
+	  Andreas Siebert.
+  </div>
+</div>
+
+<div data-role="page" id="showAllDebtsPage" > 
+ <div data-role="content"> 
+ </div>
+</div>
+
+
+</body>
+</html>

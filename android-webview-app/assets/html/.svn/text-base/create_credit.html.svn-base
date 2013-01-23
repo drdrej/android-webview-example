@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>MyCredits - manage your money</title>
+
+<link rel="stylesheet" href="../css/manage_queries.css" />
+<link rel="stylesheet" href="../css/jquery_mobile.css" />
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+
+
+<script type="text/javascript" language="JavaScript"
+	src="../js/jquery_tmpl.js"></script>
+<script type="text/javascript" language="JavaScript"
+	src="../js/jquery_tmplPlus.js"></script>
+
+<script type="text/javascript" language="JavaScript">
+    var template = $( "#debtorInfoTmpl" ).template();
+    
+    function contactSelected( name, phone ) {
+         alert( "name, phone" );
+         var data = { DEBTOR_NAME : name, 
+                      DEBTOR_PHONE : phone 
+         };
+         
+         var newContent = $("#debtorInfoTmpl").tmpl( data );
+         $( "#contractOutputDiv" ).html( newContent );
+    }
+
+    $(document).bind("mobileinit", function() {
+  		$.mobile.loadingMessage = "Please Wait";
+  		$.mobile.ajaxFormsEnabled = false;
+	});
+	
+	$( function() {
+	   $("#choseContact").tap( function() {
+ 			CreateCreditControl.callContactsManager();
+ 	   });
+	});
+	
+    </script>
+
+<script type="text/javascript" src="../js/jquery_mobile.js"></script>
+
+
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport"
+	content="width=device-width, height=device-height, user-scalable=no" />
+
+
+</head>
+
+<body background="#000000">
+
+<script id="debtorInfoTmpl" type="text/x-jQuery-tmpl">
+    <table width="100%">
+       <tr >
+       	<td><strong>Name:</strong></td>
+       	<td><i>${DEBTOR_NAME}</i></td>
+       </tr>
+       <tr>
+       	<td><strong>Phone:</strong></td>
+       	<td><i>${DEBTOR_PHONE}</i></td>
+       </tr>
+    </table>
+    <div id="changeContactDiv" data-role="fieldcontain" >
+		    <a id="choseContact" data-role="button" data-icon="arrow-d">change debtor</a>
+	</div>
+    <br />
+    <br />
+</script>
+
+
+<a href="#" id="xxx">TEST</a>
+
+<div data-role="page" id="newCreditPage"> 
+    <div class="ui-body ui-body-b">
+	 	<div id="choseContactDiv" data-role="fieldcontain" >
+		    <label for="choseContact">Chose a debtor from:</label>
+		    <a id="choseContact" data-role="button" data-icon="arrow-d">contactlist ...</a>
+		</div>
+		
+        <div id="contractOutputDiv"></div>
+              
+		<div id="inputValueDiv" data-role="fieldcontain" >
+		    <span id="creditValue" >0.0EUR</span>
+		    <table>
+		         <tr>
+		            <td>1</td>
+		            <td>2</td>
+		         </tr>
+		    </table>
+		</div>				
+    </div>	
+</div>
+
+</body>
+</html>

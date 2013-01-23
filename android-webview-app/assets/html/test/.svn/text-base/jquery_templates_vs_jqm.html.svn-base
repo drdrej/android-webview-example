@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" /> 
+    <title>MyCredits - manage your money </title>
+	
+	<link rel="stylesheet" href="../../css/manage_queries.css" />
+	<link rel="stylesheet" href="../../css/jquery_mobile.css" />
+
+	<script  type="text/javascript" src="../../js/jquery.js" ></script>
+
+    <script  type="text/javascript" language="JavaScript" src="../../js/jquery_tmpl.js"></script>
+	<script  type="text/javascript" language="JavaScript" src="../../js/jquery_tmplPlus.js"></script>
+
+	<script  type="text/javascript" src="../../js/jquery_mobile.js"></script>
+
+     
+	<meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no" />
+</head>
+
+<body background="#000000" >
+
+<div data-role="page" id="newCreditPage"> 
+    <div class="ui-body ui-body-b">
+			 	<div data-role="fieldcontain" >
+				    <label for="credit_by">Chose a debtor from:</label>
+				    <!-- button id="choseContactFromContactlist" name="choseContactFromContactlist"  type="submit" 
+				            data-theme="c" autofocus="autofocus" >contactlist ...</button> -->
+				    <a id="choseContact" data-role="button" data-icon="arrow-d">contactlist ...</a>
+				</div>
+    </div>	
+</div>
+
+</body>
+</html>

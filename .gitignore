@@ -1,0 +1,7 @@
+# metadaten des projekts wie das gesammte verzeichniss sollten durch das
+# imagebackup gesichert werden.
+.metadata/
+
+# Alle generierte Dateien im bin-Verzeichniss
+bin/
+gen/

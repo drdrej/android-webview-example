@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+
+//$(document).live("mobileinit", $.extend(  $.mobile , {
+//    backBtnText : "Retour",
+//    loadingMessage = "Loadiong app ...";
+
+//alert("loaded b!");
+//
+//var rowTmpl = $( "#row_template" );
+//$.template( "row_template", rowTmpl );
+//
+//alert("loaded!");
+//
+//$( "#credits" ).empty();
+//
+//var movies = [
+//  { credit_by: "The Red Violin", credit_value: "1998", created_at: "François Girard" },
+//];
+//
+//$.tmpl( "row_template", movies ).appendTo( "#credits" );
+//    alert( "xxx" );
+//}));
+
+		
+		/*function(){*/
+// $.mobile.loadingMessage = "Loadiong app ...";
+//  
+// var rowTmpl = $( "#row_template" );
+// $.template( "row_template", rowTmpl );
+//  
+// alert("loaded!");
+//  
+// $( "#credits" ).empty();
+//  
+// var movies = [
+// { credit_by: "The Red Violin", credit_value: "1998", created_at: "François
+// Girard" },
+// ];
+//  
+// $.tmpl( "row_template", movies ).appendTo( "#credits" );
+// });
+
+
+

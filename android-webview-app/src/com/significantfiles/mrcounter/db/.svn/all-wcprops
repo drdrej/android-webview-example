@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/46/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/mrcounter/db
+END
+ContentProviderCmd.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/46/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/mrcounter/db/ContentProviderCmd.java
+END
+ContentValuesKeys.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/46/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/mrcounter/db/ContentValuesKeys.java
+END
+CreditQuery.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/54/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/mrcounter/db/CreditQuery.java
+END
+CreditSQLiteOpenHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/54/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/mrcounter/db/CreditSQLiteOpenHelper.java
+END
+Credits.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/54/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/mrcounter/db/Credits.java
+END
+Credit.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/54/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/mrcounter/db/Credit.java
+END
+CreditDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/46/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/mrcounter/db/CreditDao.java
+END
+CreditByIdResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/46/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/mrcounter/db/CreditByIdResult.java
+END
+InsertCreditCmd.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/46/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/mrcounter/db/InsertCreditCmd.java
+END
+UnknownQueryTypeException.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/46/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/mrcounter/db/UnknownQueryTypeException.java
+END
+Uris.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/46/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/mrcounter/db/Uris.java
+END
+DaoConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/46/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/mrcounter/db/DaoConfig.java
+END
+CommandUriMatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/46/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/mrcounter/db/CommandUriMatcher.java
+END
+ContentResolverUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/46/andrej/code/debittoy/trunk/debittoy/src/com/significantfiles/mrcounter/db/ContentResolverUtil.java
+END
